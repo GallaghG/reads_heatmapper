@@ -2,6 +2,7 @@
 
 import pandas as pd
 import os
+import re
 
 #heatmap vis imports
 #bokeh imports
@@ -95,12 +96,14 @@ def heatmap_vis(combined_df):
         ('strain', '@Strain')]
     
     
-    output_file('heatmap_example.html')
-    #return(p) #for jupyter notebook
+    
+    return(p) 
     
 
     
 directory = input('What is the analysis folder path? ')
 
 combined_df = file_import(directory)
+save(heatmap_vis(combined_df), filename='heatmap_example.html') #to save as html file
+
 #show(heatmap_vis(combined_df)) #for jupyter notebook inline
